@@ -12,6 +12,7 @@ open class Response {
     open let ref: String
     open let topic: String
     open let event: String
+    open let packet: Data
     open let payload: Socket.Payload
 
     init?(data: Data) {
@@ -26,6 +27,7 @@ open class Response {
                 self.topic = topic
                 self.event = event
                 self.payload = payload
+                self.packet = data
             }
             else {
                 return nil
